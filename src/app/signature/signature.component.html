@@ -1,0 +1,30 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="cancel()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Signature</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="delete()">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+      <ion-button (click)="save()">
+        <ion-icon slot="icon-only" name="checkmark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content #content class="ion-no-padding ion-no-margin">
+  <ion-item class="ion-no-padding ion-no-margin" slot="fixed">
+    <canvas
+      #imageCanvas
+      (touchstart)="startDrawing($event)"
+      (touchmove)="moved($event)"
+    ></canvas>
+  </ion-item>
+</ion-content>
